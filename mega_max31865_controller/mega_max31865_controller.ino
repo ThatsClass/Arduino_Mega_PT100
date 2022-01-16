@@ -50,7 +50,7 @@ void setup() {
     serial_ports[i]->begin(baud);
   }
   // Initializing the MAX31865 boards. All boards are using 4 wire configuration.
-  for (uint8_t i = 0; i < 4; i++) {
+  for (uint8_t i = 0; i < connected_ports; i++) {
     sensors[i].begin(MAX31865_4WIRE);
   }
 }
