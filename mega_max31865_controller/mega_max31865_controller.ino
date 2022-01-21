@@ -52,6 +52,10 @@ void setup() {
   // Initializing the MAX31865 boards. All boards are using 4 wire configuration.
   for (uint8_t i = 0; i < connected_ports; i++) {
     sensors[i].begin(MAX31865_4WIRE);
+    // Reading the board a few times.
+    for (uint8_t i = 0; i < 10; i++) {
+      read_sensor(sensors[i]);
+    }
   }
 }
 
